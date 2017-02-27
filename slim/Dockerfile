@@ -19,7 +19,6 @@ RUN NODE_SOURCE="/usr/src/node"; \
     make -j$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) && \
     make install && \
     npm install -g yarn && \
-    yarn global add forever@0.14.2 && \
     paxctl -cm ${NODE_PREFIX}/bin/node && \
     cd / && \
     apk del $APK_NEEDS && \
